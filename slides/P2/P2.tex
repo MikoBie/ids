@@ -1,0 +1,344 @@
+\documentclass{beamer}
+\usepackage{ulem}
+\usepackage{tikz}
+\usepackage{booktabs}
+ \usepackage{graphicx,threeparttable,caption}
+\usetikzlibrary{shapes,snakes}
+\usepackage[beamer,customcolors]{hf-tikz}
+\usepackage{nicematrix}
+\usepackage{xcolor}
+\usepackage{makecell}
+\usepackage{array}
+\usepackage{csquotes}
+\usepackage{csquotes}
+\usepackage{minted}
+\captionsetup{labelformat=empty,labelsep=none}
+
+\graphicspath{ {./png/} }
+
+\usetikzlibrary{
+    arrows,
+    arrows.meta,
+    shapes,
+    positioning,
+    shadows,
+    trees,
+    calc
+}
+
+\tikzset{%
+    >={Latex[width=2mm,length=2mm]},
+    % Specifications for style of nodes:
+    plain/.style = {},
+    base/.style = {
+        plain,
+        rectangle, rounded corners, draw=black,
+        minimum width=1cm, minimum height=1cm,
+        text centered, font=\sffamily\tiny\bfseries,
+        fill=white, align=center
+    },
+    app/.style = {base, ellipse},
+    data/.style = {base, fill=gray!30},
+    action/.style = {base, circle, fill=red!30},
+    note/.style = {app, fill=yellow},
+    hl/.style={
+    set fill color=red!80!black!40,
+    set border color=red!80!black
+    }
+}
+
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+%\usecolortheme[orchid]{structure}
+\usetheme[hideothersubsections]{PaloAlto}
+\makeatletter
+\patchcmd{\csq@bquote@i}{{#6}}{{\emph{#6}}}{}{}
+\makeatother
+%\usecolortheme{orchid}
+%\usefonttheme{professionalfonts}
+\newcommand{\soutthick}[1]{%
+   \textcolor{red}{
+   \renewcommand{\ULthickness}{1pt}%
+      \sout{#1}%
+   \renewcommand{\ULthickness}{.4pt}% Resetting to ulem default
+   }
+}
+\newcommand{\centered}[1]{\begin{tabular}{l} #1 \end{tabular}}
+\setbeamertemplate{section in toc}[square]
+\setbeamertemplate{subsection in toc}[square]
+\setbeamertemplate{secion in sidebar}[shaded]
+\setbeamertemplate{items}[square]
+\setbeamercovered{transparent} 
+
+\title[]{Computational Social Science: An Introduction to Data Science}
+\subtitle{}
+\author[]{Mikołaj Biesaga\\ \small{\color{blue}{\href{mailto:m.biesaga@uw.edu.pl}{m.biesaga@uw.edu.pl}}}}
+\institute{\includegraphics[width = 4 cm]{uw.png}}
+\date{\today}
+\begin{document}
+\begin{frame}
+   \titlepage
+\end{frame}
+\section[Fun Facts]{Fun Facts}
+
+\begin{frame}
+    \frametitle{Access to Internet}
+    According to Statista 63.1\% $\approx$ 5.01 billion people were using Internet in 2022:
+        \begin{itemize}
+            \item 98\% in Northern Europe (Denmark)
+            \item 45\% in Developing countries
+            \item 25\% in Middle Africa
+        \end{itemize}
+    According to GUS 2019 in Poland access to Internet had:
+        \begin{itemize}
+            \item 84\% of Households
+            \item 99.7\% of Financial Sector Enterprises
+            \item 95\% of Non-Financial Sector Enterprises
+        \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Mobile Network}
+    \only<+>{
+        \begin{figure}
+            \caption{Mobile cellular subscription (per 100 people)}
+            \includegraphics[width = .9\textwidth]{png/mobile_phones.png}
+        \end{figure}
+    }
+    \only<+>{
+        \begin{figure}
+            \caption{Mobile phone internet user penetration worldwide from 2014-2019}
+            \includegraphics[width = .9\textwidth]{png/mobile_internet.png}
+        \end{figure}
+    }
+\end{frame}
+
+\begin{frame}
+    \frametitle{Social Media}
+    \captionsetup{labelformat=empty,labelsep=none}
+    \only<+>{
+        \begin{columns}[t]
+            \begin{column}{.15\textwidth}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/facebook.png}}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/reddit.png}}
+            \end{column}
+            \begin{column}{.15\textwidth}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/instagram.png}}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/whatsapp.png}}
+            \end{column}
+            \begin{column}{.15\textwidth}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/twitter.png}}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/linkedin.png}}
+            \end{column}
+            \begin{column}{.15\textwidth}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/youtube.png}}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/pinterest.png}}
+            \end{column}
+            \begin{column}{.15\textwidth}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/wechat.png}}
+                \resizebox{\textwidth}{!}{
+                \includegraphics{png/tik-tok.png}}
+            \end{column}
+        \end{columns}
+    }
+    \only<+>{
+        \begin{table}
+            \begin{tabular}{l | c }
+                Service & Users \\
+                \hline \hline
+                Facebook & 2.9 billion users \\
+                YouTube & 2.6 bilion users \\
+                Whatsapp & 2.0 bilion users \\
+                Instagram & 1.5 billion \\
+                WeChat & 1.3 billion \\
+                TikTok & 1.0 billion \\
+                Lindekin (2019) & 610 milion users\\
+                Reddit (2019) & 542 milion users\\
+                Twitter (2019) & 321 milion users \\
+                Pinterest (2019) & 265 milion users\\
+            \end{tabular}
+            \caption{Data From Wikipedia}
+        \end{table}
+    }
+    \only<+>{
+        According to \href{https://www.brandwatch.com/blog/amazing-social-media-statistics-and-facts/}{\textcolor{blue}{brandwatch.com}}:
+        \begin{itemize}
+            \item the Internet has 5.01 billion users
+            \item there are 4.26 billion active social media users
+            \item the average time spent on social media is 147 minutes (142 minutes in 2018)
+            \item 173 billion dollars will be spent on social media advertising in 2022 (74 in 2018)
+        \end{itemize}
+    }
+\end{frame}
+
+\section[Digital Footprints]{Digital Footprints}
+\begin{frame}
+    \frametitle{Digital Footprints}
+    \captionsetup{labelformat=empty,labelsep=none}
+    \only<0>{
+        \resizebox{\textwidth}{!}{
+        \includegraphics{png/digital_footprint.jpeg}}
+    }
+    \only<+>{
+        \begin{figure}
+            \includegraphics[width = \textwidth]{png/ISOC-Dark-RGB_Logo_400px.png}
+            \caption{ \href{https://www.youtube.com/watch?v=Ro_LlRg8rGg}{\textcolor{blue}{YouTube clip}}}
+        \end{figure}
+        }
+    \only<+>{
+        \begin{definition}
+            \emph{Digital Footprint} (or digital shadow) is a unique traceable set of actions, contributions or communications manifested on the Internet or digital devices. In general, there are two types of digital footprints: passive and active.
+        \end{definition}
+        }
+    \only<+>{
+        \begin{definition}
+            \emph{Passive Digital Footprint} is a trail of data you create unintentionally, i.e. when you visit the webserver may log your IP address, which identifies your Internet service provider and your approximate location.
+        \end{definition}
+    }
+    \only<+>{
+        \begin{definition}
+            \emph{Active Digital Footprint} includes data that you intentionally submit online. Sending an email contributes to your active digital footprint since you expect the data to be seen and/or saved by another person.
+        \end{definition}
+    }
+\end{frame}
+
+\section[Micro-targeting]{Micro-targeting}
+\begin{frame}
+    \frametitle{Micro-targeting}
+    \only<+>{
+        \begin{definition}
+            In general terms, \emph{micro-targeting} is sending a message to a highly specific portion of an audience based on particular information.
+        \end{definition}
+    }
+    \only<+>{
+        \begin{figure}
+            \centering
+            \includegraphics[scale = .25]{png/targetlogo-6.jpeg}
+            \caption{from \href{https://corporate.target.com/article/2014/04/bullseye-love-history-of-target-logo}{\textcolor{blue}{www.corporate.target.com}}}
+        \end{figure}
+    }
+    \only<+>{
+        \resizebox{\textwidth}{!}{
+        \includegraphics{png/microtargeting.jpeg}}
+    }
+
+\end{frame}
+
+\subsection[Facebook Studies]{Psychological Targeting}
+\begin{frame}
+    \frametitle{Psychological Targeting}
+    \only<1,4>{
+        \begin{itemize}
+            \item 2007 David Stillwell creates \href{https://sites.google.com/michalkosinski.com/mypersonality}{\textcolor{blue}{myPersonality}} Facebook App to share a personality questionnaire
+            \item by 2012 6 million people completed personality questionnaire
+            \item 40\% of participants gave the informed consent to share their Facebook data
+            \item Private traits and attributes are predictable from digital records of human behavior (Kosinski, Stillwell, \& Graepel, 2013)
+            \item<4> Psychological targeting as an effective approach to digital mass persuasion (Matz et al., 2017; Eckles, Gordon, \& Johnson, 2018; Sharp, Danenberg, \& Bellman, 2018)
+        \end{itemize}
+    }
+    \only<2>{
+        \begin{figure}
+            \centering
+            \includegraphics[scale = .6]{png/Kosinski_S1.jpg}
+            \caption{Kosinski, Stillwell, \& Graepel (2013)}
+        \end{figure}
+    }
+    \only<3>{
+        \begin{figure}
+            \centering
+            \includegraphics[scale  =.6]{png/Kosinski2_S1.jpg}
+            \caption{Kosinski, Stillwell, \& Graepel (2013)}
+        \end{figure}
+    }
+    \only<5>{
+        \begin{figure}
+            \centering
+            \includegraphics[scale = .7]{png/Kosinski_S2.jpg}
+            \caption{Matz et al., 2017}
+        \end{figure}
+    }
+    \only<6>{
+        \begin{figure}
+            \centering
+            \includegraphics[scale = .8]{png/Kosinski2_S2.jpg}
+            \caption{Matz et al., 2017}
+        \end{figure}
+    }
+
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Micro-Targeting in Politics}
+    \begin{itemize}
+        \item George W. Bush 2004 reelection campaign
+        \item Barack Obama 2008 campaign (\href{https://www.youtube.com/watch?time_continue=7&v=BiQwcFRUg_8}{\textcolor{blue}{YouTube clip}})
+        \item Ted Cruz and Donald Trump 2016 campaign
+    \end{itemize}
+\end{frame}
+
+\section[Cambridge Analytica]{How different was Cambridge Analytica Scandal from Micro-Targeting in Politics?}
+\hoffset=-1.5cm
+\begin{frame}[plain,fragile]%{Anatomy of the CA scandal}
+\begin{tikzpicture}[node distance=1.5cm]
+% Specification of nodes (position, etc.)
+\node (kogan)   [base] {A. Kogan\\Cambridge Psych.};
+\node (life)    [app, below of=kogan] {This is Your Digital Life \\ (FB app)};
+\node (user1)   [data, below of=life] {27k users};
+\node (user2)   [data, below of=user1] {Indirect access to 87 mln FB profiles};
+\node (sold)    [action, right of=life, xshift=1.5cm, yshift=-.5cm] {Sold to};
+\node (ca)      [base, right of=sold, xshift=.5cm] {Cambdridge\\Analytica};
+\node (other)   [app, below of=ca, yshift=-1cm] {Other data sources\\(e.g. Cruz Crew)};
+\node (pc)      [plain, right of=ca, xshift=.5cm] {$\vdots$};
+\node (p1)      [data, above of=pc] {Segment $1$};
+\node (pn)      [data, below of=pc] {Segment $n$};
+\node (micro)   [action, right of=pc, xshift=.5cm] {Microtargeting};
+\node (note)    [note, above of=sold, xshift=1cm, yshift=1cm] {Violation of FB policy;\\greyzone in terms of law};
+% Specification of paths
+\draw[->] (kogan) -- (life);
+\draw[->] (life) -- (user1);
+\draw[->] (user1) -- (user2);
+\draw[->] (kogan) -- (sold);
+\draw[->] (user2) -- (sold);
+\draw[->] (sold) -- (ca);
+\draw[->] (other) -- (ca);
+\draw[->] (ca) -- (p1);
+\draw[->] (ca) -- (pn);
+\draw[->] (p1) -- (micro);
+\draw[->] (pn) -- (micro);
+\draw[-] (sold) -- (note);
+\end{tikzpicture}
+\end{frame}
+
+\hoffset=0cm
+\section[Discussion]{Discussion}
+
+\begin{frame}
+    \frametitle{Discussion}
+    \begin{enumerate}
+        \item Social benefits and risks of using digital footprints.
+        \item Social Science benefits and risks of using digital footprints.
+    \end{enumerate}
+\end{frame}
+
+
+
+\end{document}
