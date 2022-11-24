@@ -1,0 +1,41 @@
+\documentclass{standalone}
+\usepackage{amsfonts, amsmath, amssymb, bm} %Math fonts and symbols
+\usepackage{dcolumn, multirow} % decimal-aligned columns, multi-row cells
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{graphicx, subfigure, float} % graphics commands
+\usepackage[margin=1in]{geometry} % sets page layout
+\usepackage{setspace}% allows toggling of double/single-spacing
+\usepackage{verbatim}% defines environment for un-evaluated code
+\usepackage{natbib}% defines citation commands and environments.
+\singlespace % set document spacing to single
+\bibpunct[, ]{(}{)}{,}{a}{}{,} % sets the punctuation of the bibliography entires.
+\newcolumntype{d}[1]{D{.}{.}{#1}} % defines a decimal-aligned column
+\usepackage{tikz}
+\usetikzlibrary{intersections}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\hyphenpenalty=10000
+
+\begin{document}
+    \begin{tikzpicture}
+        \draw [fill = red!30] (0,0) rectangle (12,14.5);
+        \draw node at (1,.5) {\textless \textbackslash html\textgreater};
+        \draw node at (1,14) {\textless html\textgreater};
+        \draw [fill = blue!30] (1,13.5) rectangle (11,9.5);
+        \draw node at (2,13) {\textless head\textgreater};
+        \draw node at (2,10) {\textless \textbackslash head\textgreater};
+        \draw [fill = green!30] (2,12.5) rectangle (10,10.5);
+        \draw node at (3,12) {\textless title\textgreater};
+        \draw node at (3,11) {\textless \textbackslash title\textgreater};
+        \draw node at (5.5, 11.5) {Justyna Kowalczyk fandom};
+        \draw [fill = blue!30] (1,1) rectangle (11,9);
+        \draw node at (2,1.5) {\textless \textbackslash body\textgreater};
+        \draw node at (2,8.5) {\textless body\textgreater};
+        \draw [fill = white] (2,2) rectangle (10,8);
+        \draw [fill = green!30] (2,6) rectangle (10,8);
+        \draw node at (6,7) {\tiny \textless h1\textgreater Why Justyna Kowalczyk is the best? \textless \textbackslash h1\textgreater};
+        \draw [fill = yellow!30] (3,2.5) rectangle (9,5.5);
+        \draw node [text width = 6cm] at (6.3,4) {\tiny \textless p\textgreater Because she is just \textless b\textgreater the best\textless \textbackslash b\textgreater  cross-county skier in the history of the sport. You can learn more about her amazing achivements visiting her Wikipedia webpage: https:\textbackslash\textbackslash pl.wikipedia.org\textbackslash wiki\textbackslash Justyna\_Kowalczyk. \textless \textbackslash p\textgreater};
+    \end{tikzpicture}
+\end{document}
