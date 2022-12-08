@@ -398,6 +398,7 @@ TSWLatexianTemp*
 
 #lista
 lista.csv
+lista.xlsx
 
 # Homework
 homework/*
