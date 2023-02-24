@@ -406,5 +406,5 @@ homework/*
 # Archives
 *.zip
 
-# MS Word temp files
+# MS Office temp files
 ~$*
