@@ -30,7 +30,8 @@
   \vfill
   \end{frame}
 }
-%\usecolortheme[orchid]{structure}
+\definecolor{pinkWybory}{RGB}{224, 101, 137}
+%\usecolortheme[named = pinkWybory]{structure}
 \usetheme[hideothersubsections]{PaloAlto}
 \makeatletter
 \patchcmd{\csq@bquote@i}{{#6}}{{\emph{#6}}}{}{}
@@ -79,6 +80,13 @@
         \framesubtitle{Current comics book}
         \begin{center}
             \includegraphics[width = .5\textwidth]{niezwyciezony.jpeg}
+        \end{center}
+    }
+
+    \only<4>{
+        \framesubtitle{Frequency in General Elections}
+        \begin{center}
+            \includegraphics[width = .5\textwidth]{wybory.png}
         \end{center}
     }
 \end{frame}
@@ -316,7 +324,7 @@
     }
     \only<+>{
         \begin{figure}
-            \includegraphics[scale =.3]{png/twitter.png}
+            \includegraphics[width = \textwidth]{png/twitter.png}
             \caption{from \textcolor{blue}{\href{https://developer.twitter.com/en/use-cases/analyze}{Developer Twitter}}}
         \end{figure}
     }
