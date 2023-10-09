@@ -399,6 +399,7 @@ TSWLatexianTemp*
 #lista
 lista.csv
 lista.xlsx
+lista_2023.xlsx
 
 # Homework
 homework/*
