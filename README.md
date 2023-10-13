@@ -26,7 +26,7 @@ For more advanced users I recommend running Jupyter Notebooks on their local mac
 
 ### Setup
 
-1. Cloen the repo: `git@github.com:MikoBie/ids`
+1. Clone the repo: `git@github.com:MikoBie/ids`
 2. Set up the proper virtual environment with _python3.10_
 3. Install all the dependencies from `requirenments.txt`
 
