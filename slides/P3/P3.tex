@@ -91,46 +91,53 @@
 
 \section{Examples}
 
-\begin{frame}
-    \frametitle{Twitter}
-    \only<1>{
-        \begin{figure}
-            \centering
-            \includegraphics[width = .3\textwidth]{twitter_log.png}
-        \end{figure}
-    }
-    \only<2>{
-        \begin{figure}
-            \centering
-            \includegraphics[width = \textwidth]{twitter1.png}
-        \end{figure}
-    }
-    \only<3>{
-        \begin{figure}
-            \centering
-            \includegraphics[width = \textwidth]{twitter2.png}
-        \end{figure}
-    }
-    
-\end{frame}
+%% \begin{frame}
+%%     \frametitle{Twitter}
+%%     \only<1>{
+%%         \begin{figure}
+%%             \centering
+%%             \includegraphics[width = .3\textwidth]{twitter_log.png}
+%%         \end{figure}
+%%     }
+%%     \only<2>{
+%%         \begin{figure}
+%%             \centering
+%%             \includegraphics[width = \textwidth]{twitter1.png}
+%%         \end{figure}
+%%     }
+%%     \only<3>{
+%%         \begin{figure}
+%%             \centering
+%%             \includegraphics[width = \textwidth]{twitter2.png}
+%%         \end{figure}
+%%     }
+%%     
+%% \end{frame}
 \begin{frame}
     \frametitle{Reddit}
-    \only<1>{
+    \only<+>{
         \begin{figure}
             \centering
             \includegraphics[width = .3\textwidth]{reddit_log.png}
         \end{figure}
     }
-    \only<2>{
-        \begin{figure}
-            \centering
-            \includegraphics[width = \textwidth]{poster.png}
-        \end{figure}
-    }
-    \only<3>{
+    \only<+>{
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{reddit2.png}
+        \end{figure}
+    }
+    \only<+>{
+        \framesubtitle{(Sepahpour-Fard et al., 2022)}
+        \begin{figure}
+            \centering
+            \includegraphics[width = .75\textwidth]{melody.png}
+        \end{figure}
+    }
+    \only<+>{
+        \begin{figure}
+            \centering
+            \includegraphics[width = \textwidth]{poster.png}
         \end{figure}
     }
 
@@ -139,25 +146,60 @@
 
 \begin{frame}
     \frametitle{Wikipedia}
-    \only<1>{
+    \only<+>{
         \begin{figure}
             \centering
             \includegraphics[width = .3\textwidth]{wiki_logo.png}
         \end{figure}
     }
-    \only<2>{
+    \only<+>{
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{wiki1.png}
         \end{figure}
     }
-    \only<3>{
+    \only<+>{
+        \framesubtitle{(Wagner et al., 2015)}
+        \begin{itemize}
+            \item \textbf{Coverage bias} determines differences between the
+            number of notable women and men portrayed on Wikipedia.             
+            \item \textbf{Visibility bias} reflects how many articles about men
+            or women make it to the front page of Wikipedia.        
+            \item \textbf{Structural bias} quantifies gender homophily/disassortativity,
+            i.e. gender-specific tendencies to preferably link articles of
+            notable people with the same or different gender. 
+            \item \textbf{Lexical bias} reveals inequalities in the words used
+            to describe notable men and women on Wikipedia.
+        \end{itemize}
+    }
+    \only<+>{
+        \framesubtitle{(Wagner et al., 2015)}
+        \begin{itemize}
+            \item \textbf{Coverage bias:} Men and women are covered equally well
+            in all six Wikipedia language editions. 
+            \item \textbf{Visibility bias:} No evidence for male-bias in the
+            selection procedure of articles that are featured on the startpage
+            of the English Wikipedia.
+            \item \textbf{Structural bias:} Women on Wikipedia tend
+            to be more linked to men than vice versa. 
+            \item \textbf{Lexical bias:} Romantic relationships and
+            family-related issues are much more frequently discussed on
+            Wikipedia articles about women than men.
+        \end{itemize}
+    }
+    \only<+>{
         \begin{figure}
             \centering
             \includegraphics[width = \textwidth]{wiki2.png}
         \end{figure}
     }
-    
+    \only<+>{
+        \framesubtitle{(Ruprechter et al., 2020)}
+        \begin{figure}
+            \centering
+            \includegraphics[width = \textwidth]{wikipedia_chart.png}
+        \end{figure}
+    }
 \end{frame}
 \section[API]{Web Application Programming Interface}
 
@@ -327,20 +369,20 @@
         \frametitle{HTTP Requests}
         HTTP Requests is typically composed of:
         \begin{itemize}
-            \item A start-line (HTTP method, URL/URI, and HTTP version)
+            \item A start-line (HTTP method, URL/URI, and HTTP version).
             \item An optional set of HTTP headers specifying the request, or describing the body included in the message.
-            \item An optional body containing data associated with the request
+            \item An optional body containing data associated with the request.
         \end{itemize}
 
     }
     \only<+>{
         \frametitle{HTTP Request Methods}
         \begin{itemize}
-            \item GET - requests a representation of the specified resource
-            \item POST - is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
-            \item PUT - replaces all current representations of the target resource with the request payload.
-            \item DELETE - deletes the specified resource.
-            \item PATCH - is used to apply partial modifications to a resource.
+            \item GET -- requests a representation of the specified resource
+            \item POST -- is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
+            \item PUT -- replaces all current representations of the target resource with the request payload.
+            \item DELETE -- deletes the specified resource.
+            \item PATCH -- is used to apply partial modifications to a resource.
         \end{itemize}
         %\footnote{Detailed documentation on \textcolor{blue}{\href{https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods}{Request Methods}}}
     }
@@ -414,9 +456,9 @@
     \frametitle{Bibliography}
     \tiny
     \begin{enumerate}
-        \item Colleoni, E., Rozza, A., \& Arvidsson, A. (2014). Echo Chamber or Public Sphere? Predicting Political Orientation and Measuring Political Homophily in Twitter Using Big Data: Political Homophily on Twitter. Journal of Communication, 64(2), 317–332. \href{https://doi.org/10.1111/jcom.12084}{\textcolor{blue}{https://doi.org/10.1111/jcom.12084}}
-        \item Ozalp, S., Williams, M. L., Burnap, P., Liu, H., \& Mostafa, M. (2020). Antisemitism on Twitter: Collective Efficacy and the Role of Community Organisations in Challenging Online Hate Speech. Social Media + Society, 6(2), 205630512091685. \href{https://doi.org/10.1177/2056305120916850}{\textcolor{blue}{https://doi.org/10.1177/2056305120916850}}
-        \item Mancini, A., Desiderio, A., Di Clemente, R., \& Cimini, G. (2022). Self-induced consensus of Reddit users to characterise the GameStop short squeeze. Scientific Reports, 12(1), 13780. \href{https://doi.org/10.1038/s41598-022-17925-2}{\textcolor{blue}{https://doi.org/10.1038/s41598-022-17925-2}}
+        %% \item Colleoni, E., Rozza, A., \& Arvidsson, A. (2014). Echo Chamber or Public Sphere? Predicting Political Orientation and Measuring Political Homophily in Twitter Using Big Data: Political Homophily on Twitter. Journal of Communication, 64(2), 317–332. \href{https://doi.org/10.1111/jcom.12084}{\textcolor{blue}{https://doi.org/10.1111/jcom.12084}}
+        %% \item Ozalp, S., Williams, M. L., Burnap, P., Liu, H., \& Mostafa, M. (2020). Antisemitism on Twitter: Collective Efficacy and the Role of Community Organisations in Challenging Online Hate Speech. Social Media + Society, 6(2), 205630512091685. \href{https://doi.org/10.1177/2056305120916850}{\textcolor{blue}{https://doi.org/10.1177/2056305120916850}}
+        %% \item Mancini, A., Desiderio, A., Di Clemente, R., \& Cimini, G. (2022). Self-induced consensus of Reddit users to characterise the GameStop short squeeze. Scientific Reports, 12(1), 13780. \href{https://doi.org/10.1038/s41598-022-17925-2}{\textcolor{blue}{https://doi.org/10.1038/s41598-022-17925-2}}
         \item Sepahpour-Fard, M., \& Quayle, M. (2022). How Do Mothers and Fathers Talk About Parenting to Different Audiences?: Stereotypes and Audience Effects: An Analysis of r/Daddit, r/Mommit, and r/Parenting Using Topic Modelling. Proceedings of the ACM Web Conference 2022, 2696–2706. \href{https://doi.org/10.1145/3485447.3512138}{\textcolor{blue}{https://doi.org/10.1145/3485447.3512138}}
         \item Wagner, C., Garcia, D., Jadidi, M., \& Strohmaier, M. (2015). It’s a Man’s Wikipedia? Assessing Gender Inequality in an Online Encyclopedia. Proceedings of the ninth International AAAI Conference of Web and Social Media, 9, 454–463. \href{https://ojs.aaai.org/index.php/ICWSM/article/view/14628}{\textcolor{blue}{https://ojs.aaai.org/index.php/ICWSM/article/view/14628}}
         \item Ruprechter, T., Horta Ribeiro, M., Santos, T., Lemmerich, F., Strohmaier, M., West, R., \& Helic, D. (2021). Volunteer contributions to Wikipedia increased during COVID-19 mobility restrictions. Scientific Reports, 11(1), 21505. \href{https://doi.org/10.1038/s41598-021-00789-3}{\textcolor{blue}{https://doi.org/10.1038/s41598-021-00789-3}}
