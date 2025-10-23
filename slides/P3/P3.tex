@@ -224,22 +224,19 @@
 
 \begin{frame}
     \frametitle{HEART project}
-    \only<+>{
-        \framesubtitle{Structure}
-        \begin{itemize}
-            \item English version of the questionnaire had \alert{165 questions}; the length of the versions after translation varied (e.g., Serbian had 166 questions).
-            \item The questions covered:
-            \begin{enumerate}
-                \item visits to the demo site (if, how, when, what)
-                \item attitudes towards the demo site and its perception (accesibility, safety, friendliness, attractivness)
-                \item well-being and loneliness
-                \item socio-demographic characteristic
-                \item health, physical activity, and dietary habits
-                \item psychological stress and emotions
-            \end{enumerate}
-        \end{itemize}
+    \only<1,2,3>{
+        \framesubtitle{Study design}
+        \begin{tikzpicture}
+            \node [text width = 4cm] at (-5,0) {\includegraphics[width = \textwidth]{survey.png}};
+            \node at (-5,-2) {\footnotesize\textsc{Before Survey}};
+            \node<2-> [text width = 4cm] at (0,0) {\includegraphics[width = \textwidth]{regular_visits.png}};
+            \node<2-> at (0,-2) {\footnotesize\textsc{Regular Visits}};
+            \node<3> [text width = 4cm] at (5,0) {\includegraphics[width = \textwidth]{survey.png}};
+            \node<3> at (5,-2) {\footnotesize\textsc{After Survey}};
+
+        \end{tikzpicture}
     }
-    \only<+>{
+    \only<4>{
         \framesubtitle{Expected workflow}
         \centering
         \begin{tikzpicture}
@@ -256,45 +253,25 @@
             \draw [->, -stealth, thick] (4.7,0) -- (5.3,0);
         \end{tikzpicture}
     }
-    \only<+>{
+    \only<5,6>{
         \framesubtitle{Actual workflow}
         \centering
         \begin{tikzpicture}
             \node [text width = 1cm] at (0,0) {\includegraphics[width = \textwidth]{questionnaire.png}};
             \node at (0,-1) {\footnotesize\textsc{Survey}};
-            \node [text width = 1cm] at (2,0) {\includegraphics[width = \textwidth]{database.png}};
-            \node at (2,-1) {\footnotesize \textsc{DataBase}};
-            \node [text width = 1cm] at (4,0) {\includegraphics[width = \textwidth]{cleaning.png}};
-            \node at (4,-1) {\footnotesize \textsc{Preprocessing}};
-            \node [text width = 1cm] at (6,0) {\includegraphics[width = \textwidth]{spreadsheet.png}};
-            \node at (6, -1) {\footnotesize \textsc{Spreadsheet}};
-            \node [text width = 1cm] at (8,0) {\includegraphics[width = \textwidth]{analysis.png}};
-            \node at (8,-1) {\footnotesize \textsc{Analysis}};
-            \draw [->, -stealth, thick] (.7,0) -- (1.3,0);
-            \draw [->, -stealth, thick] (2.7,0) -- node [above] {API} (3.3,0);
-            \draw [->, -stealth, thick] (4.7,0) -- (5.3,0);
-            \draw [->, -stealth, thick] (6.7,0) -- (7.3,0);
-        \end{tikzpicture}
-    }
-    \only<+>{
-        \framesubtitle{Actual workflow}
-        \centering
-        \begin{tikzpicture}
-            \node [text width = 1cm] at (0,0) {\includegraphics[width = \textwidth]{questionnaire.png}};
-            \node at (0,-1) {\footnotesize\textsc{Survey}};
-            \node [text width = 1cm] at (2,0) {\includegraphics[width = \textwidth]{database.png}};
-            \node at (2,-1) {\footnotesize \textsc{DataBase}};
-            \node [text width = 1cm] at (4,0) {\includegraphics[width = \textwidth]{cleaning.png}};
-            \node at (4,-1) {\footnotesize \textsc{Preprocessing}};
-            \node [text width = 1cm] at (6,0) {\includegraphics[width = \textwidth]{spreadsheet.png}};
-            \node at (6, -1) {\footnotesize \textsc{Spreadsheet}};
-            \node [text width = 1cm] at (8,0) {\includegraphics[width = \textwidth]{analysis.png}};
-            \node at (8,-1) {\footnotesize \textsc{Analysis}};
-            \draw [->, -stealth, thick] (.7,0) -- (1.3,0);
-            \draw [->, -stealth, thick] (2.7,0) -- node [above] {API}  (3.3,0);
-            \draw [->, -stealth, thick] (4.7,0) -- (5.3,0);
-            \draw [->, -stealth, thick] (6.7,0) -- (7.3,0);
-            \draw [color = heartOrange] (4,0) circle (.8cm);
+            \node [text width = 1cm] at (2.5,0) {\includegraphics[width = \textwidth]{database.png}};
+            \node at (2.5,-1) {\footnotesize \textsc{DataBase}};
+            \node [text width = 1cm] at (5,0) {\includegraphics[width = \textwidth]{cleaning.png}};
+            \node at (5,-1) {\footnotesize \textsc{Preprocessing}};
+            \node [text width = 1cm] at (7.5,0) {\includegraphics[width = \textwidth]{spreadsheet.png}};
+            \node at (7.5, -1) {\footnotesize \textsc{Spreadsheet}};
+            \node [text width = 1cm] at (10,0) {\includegraphics[width = \textwidth]{analysis.png}};
+            \node at (10,-1) {\footnotesize \textsc{Analysis}};
+            \draw [->, -stealth, thick] (.7,0) -- (1.8,0);
+            \draw [->, -stealth, thick] (3.2,0) -- node [above] {API} (4.3,0);
+            \draw [->, -stealth, thick] (5.7,0) -- (6.8,0);
+            \draw [->, -stealth, thick] (8.2,0) -- (9.3,0);
+            \draw<6> [color = orange] (5,0) circle (.8cm);
         \end{tikzpicture}
     }
 \end{frame}
@@ -559,7 +536,8 @@
         %% \item Mancini, A., Desiderio, A., Di Clemente, R., \& Cimini, G. (2022). Self-induced consensus of Reddit users to characterise the GameStop short squeeze. Scientific Reports, 12(1), 13780. \href{https://doi.org/10.1038/s41598-022-17925-2}{\textcolor{blue}{https://doi.org/10.1038/s41598-022-17925-2}}
         \item Sepahpour-Fard, M., \& Quayle, M. (2022). How Do Mothers and Fathers Talk About Parenting to Different Audiences?: Stereotypes and Audience Effects: An Analysis of r/Daddit, r/Mommit, and r/Parenting Using Topic Modelling. Proceedings of the ACM Web Conference 2022, 2696–2706. \href{https://doi.org/10.1145/3485447.3512138}{\textcolor{blue}{https://doi.org/10.1145/3485447.3512138}}
         \item Wagner, C., Garcia, D., Jadidi, M., \& Strohmaier, M. (2015). It’s a Man’s Wikipedia? Assessing Gender Inequality in an Online Encyclopedia. Proceedings of the ninth International AAAI Conference of Web and Social Media, 9, 454–463. \href{https://ojs.aaai.org/index.php/ICWSM/article/view/14628}{\textcolor{blue}{https://ojs.aaai.org/index.php/ICWSM/article/view/14628}}
-        \item Ruprechter, T., Horta Ribeiro, M., Santos, T., Lemmerich, F., Strohmaier, M., West, R., \& Helic, D. (2021). Volunteer contributions to Wikipedia increased during COVID-19 mobility restrictions. Scientific Reports, 11(1), 21505. \href{https://doi.org/10.1038/s41598-021-00789-3}{\textcolor{blue}{https://doi.org/10.1038/s41598-021-00789-3}}
+        \item Roszczyńska-Kurasińska, M., Biesaga, M., \& de Oliveira, C. A. (2025). A Comparative Analysis of Reddit Discussions on Meat Reduction in Portugal, Poland, and the United Kingdom. Proceedings of the 58th Hawaii International Conference on System Sciences, 2532-2541, \href{https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/b993f26e-72d7-4275-9ca6-09502be6ced8/content}{\textcolor{blue}{https://scholarspace.manoa.hawaii.edu/server/api/core/bitstreams/b993f26e-72d7-4275-9ca6-09502be6ced8/content}}.
+        \item Ruprechter, T., Horta Ribeiro, M., Santos, T., Lemmerich, F., Strohmaier, M., West, R., \& Helic, D. (2021). Volunteer contributions to Wikipedia increased during COVID-19 mobility restrictions. Scientific Reports, 11(1), 21505. \href{https://doi.org/10.1038/s41598-021-00789-3}{\textcolor{blue}{https://doi.org/10.1038/s41598-021-00789-3}}.
     \end{enumerate}
     
 \end{frame}
