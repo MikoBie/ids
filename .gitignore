@@ -395,6 +395,7 @@ TSWLatexianTemp*
 
 # Docx
 *.docx
+*.xlsx
 
 #lista
 lista.csv
