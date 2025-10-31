@@ -13,7 +13,14 @@ Users who want to use the materials online in `Google Colab` should follow these
 4. Pick the relevant repository: `ids`
 4. Choose the relevant notebook and click Open Notebook.
 
-That is it, an interactive notebook should open.
+That is it, an interactive notebook should open. Alternatively, you can just click one of the links below to open the relevant notebook in Google Colab:
+
+* [Working with Wikipedia API](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/N1.ipynb) ([Homework Assignment Wikipedia](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/HW1.ipynb))
+* [Working with Reddit API](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/N2.ipynb) ([Homework Assignment Reddit](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/HW1_2.ipynb))
+* [Webscraping](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/N4.ipynb) ([Homework Assignment Webscraping](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/HW2.ipynb))
+* [Basics of NLP](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/N5.ipynb)
+* [Topic Modeling](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/N6.ipynb)
+* [LDA Model](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/N6.ipynb) ([Homework Assignment Topic Modeling](https://colab.research.google.com/github/MikoBie/ids/blob/main/notebooks/HW3.ipynb))
 
 ## Jupyter Notebook App
 
